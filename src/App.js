@@ -30,28 +30,69 @@ class App extends React.Component {
     });
   }
 
-  clearLastChar = () => {
+  clearLastCharHandler = () => {
     const { input } = this.state;
     this.setState({
       input: this.state.input.substring(0, input.length - 1) || '0'
     })
   }
 
-  
+  inputPercentHandler = () => {
+    const { input } = this.state
+    const currentValue = parseFloat(input)
+
+    if (currentValue === 0) {
+      return
+    }
+
+    const fixedDigits = input.replace(/^-?\d*\.?/, '')
+    const newValue = parseFloat(input) / 100
+
+    this.setState({
+      input: String(newValue.toFixed(fixedDigits.length + 2))
+    })
+  }
+
+  toggleSignHandler = () => {
+    const { input } = this.state
+    const newValue = parseFloat(input) * -1
+    this.setState({
+      input: String(newValue)
+    })
+  }
+
+  sqrtHandler = () => {
+    const { input } = this.state
+    const newValue = parseFloat(input);
+    const newValueSqrt = Math.sqrt(newValue);
+    this.setState({
+      input: newValueSqrt
+    })
+  }
+
+  powerHandler = () => {
+    const { input } = this.state
+    const newValue = parseFloat(input);
+    const newValueSqrt = Math.pow(newValue, 2);
+    this.setState({
+      input: newValueSqrt
+    })
+  }
 
   render() {
     return (
       <div className="App">
         <div className="Calc-Wrapper">
-          <div className="row">
+          <div className="row"> 
             <Input input={this.state.input}></Input>
           </div>
 
           <div className="row">
-            <Button click={this.clearLastChar}>C</Button>
-            <Button >%</Button>
-            <Button>69</Button>
-            <Button>/66</Button>
+            <Button click={this.clearLastCharHandler}>C</Button>
+            <Button click={this.inputPercentHandler} >%</Button>
+            <Button click={this.toggleSignHandler}>±</Button>
+            <Button click={this.powerHandler}>x<sub>2</sub></Button>
+            <Button click={this.sqrtHandler}>√x</Button>
           </div>
 
           <div className="row">
