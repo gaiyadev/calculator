@@ -1,5 +1,4 @@
 .App {
-  /* text-align: center; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,10 +17,32 @@
   width: 100%;
 }
 
+.Heading  {
+  color: #ffffff;
+  background-color: #1565C0;
+   outline: 1px solid #1565C0;
+   border: none;
+   text-align: center;
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-bottom: 0px;
+    flex: 1;
+    padding: 0.5em;
+    box-sizing: border-box;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+@media (max-width: 500) {
+  .App {
+      width: 500px;
   }
 }
 
