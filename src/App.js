@@ -33,6 +33,9 @@ class App extends React.Component {
   }
   //result method =
   equalHandler = () => {
+    if (this.state.input === '') {
+      return;
+    }
     this.setState({
       input: math.evaluate(this.state.input)
     });
