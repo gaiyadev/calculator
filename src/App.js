@@ -83,7 +83,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <div className="Calc-Wrapper">
-          <div className="row"> 
+          <div className="row">
             <Input input={this.state.input}></Input>
           </div>
 
