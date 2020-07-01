@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 import Button from './components/Button/Button';
+import Input from './components/Input/Input';
+import ClearBtn from './components/ClearButton/ClearBotton';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,10 +11,20 @@ class App extends React.Component {
       input: ''
     }
   }
+
+  clearInputHandler = () => {
+    this.setState({
+      input: ''
+    })
+  }
   render() {
     return (
       <div className="App">
         <div className="Calc-Wrapper">
+          <div className="row">
+            <Input input={this.state.input}></Input>
+          </div>
+
           <div className="row">
             <Button>7</Button>
             <Button>8</Button>
@@ -39,6 +51,10 @@ class App extends React.Component {
             <Button>0</Button>
             <Button>=</Button>
             <Button>-</Button>
+          </div>
+
+          <div className="row">
+            <ClearBtn clearHandler={() => this.clearInputHandler}>Clear</ClearBtn>
           </div>
         </div>
       </div>
