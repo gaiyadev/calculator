@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     font-weight: bold;
+     border: none;
     font-size: 1.4em;
     flex: 1;
     background-color: #000000;

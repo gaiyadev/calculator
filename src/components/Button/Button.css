@@ -4,14 +4,17 @@ display: flex;
 justify-content: center;
 align-items: center;
 font-weight: lighter;
-font-size: 1.4em;
+font-size: 1.5em;
 background-color:#e0e1e6 ;
 color: #888888;
 flex: 1;
 outline: 1px solid #888888;
+cursor: pointer;
+ border: none;
 }
 
 .Operator {
     background-color: #fe9241;
     color: #ffffff;
+     border: none;
 }
